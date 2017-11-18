@@ -4,26 +4,22 @@
 
   <property-input></property-input>
   
-
-  <div class="properties-table">
-    
-    <template v-for="property in properties">
-      {{ property.address }} / {{ property.headrent_monthly }}
-    </template>
-    
-  </div>
+  <!-- Table -->
+  <property-table :properties="properties"></property-table>
 
   </div>
 </template>
 
 <script>
 import PropertyInput from './PropertyInput.vue';
+import PropertyTable from './PropertyTable.vue';
 import { EventBus } from './EventBus';
 
 export default {
   name: 'app',
   components: {
-    'property-input': PropertyInput
+    'property-input': PropertyInput,
+    'property-table': PropertyTable
   },
   data () {
     return {
@@ -35,6 +31,10 @@ export default {
 
     EventBus.$on('submitProperty', function(property) {
       vm.properties.push(property);
+    });
+
+    EventBus.$on('removeProperty', function(index) {
+      vm.properties.splice(index, 1);
     });
   }
 }
