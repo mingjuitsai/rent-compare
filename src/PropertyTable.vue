@@ -11,6 +11,8 @@
           <th>Sub-tenant rent monthly</th>
           <th>Head-tenant rent weekly</th>
           <th>Head-tenant rent monthly</th>
+          <th>Head-tenant earn weekly</th>
+          <th>Head-tenant earn monthly</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -27,11 +29,13 @@
             </td>
             <td>{{ property.rent_monthly }}</td>
             <td>
-              <input type="number" v-model="property.subrent_weekly">
+              <input type="number" v-model="property.sub_rent_weekly">
             </td>
-            <td>{{ property.subrent_monthly }}</td>
-            <td>{{ property.headrent_weekly }}</td>
-            <td>{{ property.headrent_monthly }}</td>
+            <td>{{ property.sub_rent_monthly }}</td>
+            <td>{{ property.head_rent_weekly }}</td>
+            <td>{{ property.head_rent_monthly }}</td>
+            <td>{{ property.head_earn_weekly }}</td>
+            <td>{{ property.head_earn_monthly }}</td>
             <td>
               <button @click='removeProperty(index)'>Remove</button>
             </td>
