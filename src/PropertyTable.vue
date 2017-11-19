@@ -20,7 +20,7 @@
         <!-- Property -->
         <template v-for="(property, index) in properties">
           <tr>
-            <td>{{ index }}</td>
+            <td>{{ index + 1 }}</td>
             <td>
               <input type="text" v-model="property.address">
             </td>
